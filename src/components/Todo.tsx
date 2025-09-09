@@ -12,7 +12,11 @@ export default function TodoList() {
         >
           <span className="text-gray-700">{todo.text}</span>
           <button
-            onClick={() => removeTodo(todo.id)}
+            onClick={() => {
+              if (window.confirm("คุณแน่ใจหรือไม่ว่าต้องการลบ?")) {
+                removeTodo(todo.id);
+              }
+            }}
             className="bg-red-500 hover:bg-red-600 transition-colors text-white px-3 py-1 rounded-lg"
           >
             ลบ
